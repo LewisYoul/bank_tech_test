@@ -9,4 +9,8 @@ class Account
     @balance += amount
   end
 
+  def remove_funds(amount)
+    @balance -= amount
+  end
+
 end

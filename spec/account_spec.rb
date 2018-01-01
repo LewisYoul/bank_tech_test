@@ -15,4 +15,12 @@ describe Account do
       expect(subject.balance).to eq(500)
     end
   end
+
+  describe '#remove_funds' do
+    it 'removes 500 from the account balance' do
+      subject.add_funds(500)
+      subject.remove_funds(500)
+      expect(subject.balance).to eq(0)
+    end
+  end
 end
