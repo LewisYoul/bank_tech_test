@@ -1,55 +1,12 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/lewis/Repositories/Makers_Academy/10_Week/bank_tech_test/spec/credit_transaction_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/home/lewis/Repositories/Makers_Academy/10_Week/bank_tech_test/lib/credit_transaction.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/home/lewis/Repositories/Makers_Academy/10_Week/bank_tech_test/spec/debit_transaction_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/home/lewis/Repositories/Makers_Academy/10_Week/bank_tech_test/lib/debit_transaction.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/home/lewis/Repositories/Makers_Academy/10_Week/bank_tech_test/spec/transaction_history_spec.rb": [
+      "/home/lewis/Repositories/Makers_Academy/10_Week/bank_tech_test/spec/account_spec.rb": [
         1,
         null,
         1,
         2,
+        null,
         1,
         1,
         1,
@@ -57,9 +14,8 @@
         null,
         null
       ],
-      "/home/lewis/Repositories/Makers_Academy/10_Week/bank_tech_test/lib/transaction_history.rb": [
+      "/home/lewis/Repositories/Makers_Academy/10_Week/bank_tech_test/lib/account.rb": [
         1,
-        null,
         1,
         null,
         1,
@@ -69,6 +25,6 @@
         null
       ]
     },
-    "timestamp": 1514826459
+    "timestamp": 1514827253
   }
 }
