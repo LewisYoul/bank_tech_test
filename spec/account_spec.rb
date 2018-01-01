@@ -8,4 +8,11 @@ describe Account do
       expect(subject.balance).to eq(0)
     end
   end
+
+  describe '#add_funds' do
+    it 'adds 500 to the account balance' do
+      subject.add_funds(500)
+      expect(subject.balance).to eq(500)
+    end
+  end
 end
