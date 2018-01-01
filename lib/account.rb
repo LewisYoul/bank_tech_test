@@ -16,6 +16,7 @@ class Account
   def remove_funds(amount)
     fail "You have insufficient funds" if (@balance - amount) < 0
     @balance -= amount
+    @transaction_history << @debit_transaction.new(amount)
   end
 
 end
