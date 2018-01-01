@@ -1,8 +1,10 @@
 class Account
-  attr_accessor :balance
+  attr_accessor :balance, :debit_transaction, :credit_transaction
 
-  def initialize(balance = 0)
+  def initialize(debit_class, credit_class, balance = 0)
     @balance = balance
+    @debit_transaction = debit_class
+    @credit_transaction = credit_class
   end
 
   def add_funds(amount)

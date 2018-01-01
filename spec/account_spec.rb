@@ -1,11 +1,25 @@
 require 'account'
 
 describe Account do
-  subject { Account.new }
+  let(:debit_transaction_double) { double(:debit_transaction) }
+  let(:credit_transaction_double) { double(:credit_transaction) }
+  subject { Account.new(debit_transaction_double, credit_transaction_double) }
 
   describe '#balance' do
     it 'returns an initial balance of zero' do
       expect(subject.balance).to eq(0)
+    end
+  end
+
+  describe '#debit_transaction' do
+    it 'should return the DebitTransaction class' do
+      expect(subject.debit_transaction).to eq(debit_transaction_double)
+    end
+  end
+
+  describe '#credit_transaction' do
+    it 'should return the CreditTransaction class' do
+      expect(subject.credit_transaction).to eq(credit_transaction_double)
     end
   end
 
