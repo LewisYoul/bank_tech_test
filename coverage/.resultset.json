@@ -1,0 +1,29 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/lewis/Repositories/Makers_Academy/10_Week/bank_tech_test/spec/credit_transaction_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/lewis/Repositories/Makers_Academy/10_Week/bank_tech_test/lib/credit_transaction.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1514825322
+  }
+}
