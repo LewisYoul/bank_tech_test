@@ -22,5 +22,9 @@ describe Account do
       subject.remove_funds(500)
       expect(subject.balance).to eq(0)
     end
+    it 'should throw an error if there are insufficient funds' do
+      subject.add_funds(500)
+      expect { subject.remove_funds(700) }.to raise_error("You have insufficient funds")
+    end
   end
 end

@@ -10,6 +10,7 @@ class Account
   end
 
   def remove_funds(amount)
+    fail "You have insufficient funds" if (@balance - amount) < 0
     @balance -= amount
   end
 
