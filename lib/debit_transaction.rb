@@ -2,10 +2,11 @@ require 'date'
 
 class DebitTransaction
 
-  attr_reader :debit, :date
+  attr_reader :debit, :date, :balance
 
-  def initialize(amount, date = Date.today.to_s)
+  def initialize(amount = 0, date = Date.today.to_s, balance = 0)
     @debit = amount
     @date = date
+    @balance = balance
   end
 end
