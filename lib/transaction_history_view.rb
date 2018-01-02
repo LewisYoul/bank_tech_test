@@ -9,7 +9,15 @@ class TransactionHistoryView
   end
 
   def print_statement
-    "date || credit || debit || balance"
+    print "date || credit || debit || balance\n" + create_statements
   end
 
+  private
+
+  def create_statements
+    print_array = @transaction_history_instance.all_transactions.map do |transaction|
+      "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.balance}"
+    end
+    print_array.join("\n")
+  end
 end
