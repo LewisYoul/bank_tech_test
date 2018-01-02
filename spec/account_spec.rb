@@ -2,8 +2,8 @@ require 'account'
 
 describe Account do
   let(:transaction) { double(:transaction) }
-  let(:transaction_instance) { double(:transaction_instance) }
-  let(:transaction_view_instance) { double(:transaction_view_instance) }
+  let(:transaction_history_instance) { double(:transaction_history_instance) }
+  let(:transaction_view_instance) { double(:transaction_view_instance, transaction_history_instance: transaction_history_instance) }
   subject { Account.new(transaction_view_instance) }
 
   describe '#balance' do
@@ -20,6 +20,7 @@ describe Account do
 
   describe '#add_funds' do
     it 'adds 500 to the account balance' do
+      allow(transaction_history_instance).to receive(:add_funds).with(500, 500)
       subject.add_funds(500)
       expect(subject.balance).to eq(500)
     end
@@ -30,6 +31,8 @@ describe Account do
 
   describe '#remove_funds' do
     it 'removes 500 from the account balance' do
+      allow(transaction_history_instance).to receive(:add_funds).with(500, 500)
+      allow(transaction_history_instance).to receive(:remove_funds).with(500, 0)
       subject.add_funds(500)
       subject.remove_funds(500)
       expect(subject.balance).to eq(0)
