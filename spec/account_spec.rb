@@ -47,21 +47,4 @@ describe Account do
       expect(subject.print_statement).to eq("Test Print")
     end
   end
-  # describe '#transaction_history' do
-  #   it 'should be an instance of Array' do
-  #     expect(subject.transaction_history).to be_an_instance_of(Array)
-  #   end
-  #   it 'should contain a Transaction object after adding funds' do
-  #     allow(transaction).to receive(:new).with(500, 500, 0).and_return(transaction_instance)
-  #     subject.add_funds(500)
-  #     expect(subject.transaction_history[0]).to eq(transaction_instance)
-  #   end
-  #   it 'should contain a Transaction object after removing funds' do
-  #     allow(transaction).to receive(:new).with(500, 500, 0).and_return(transaction_instance)
-  #     subject.add_funds(500)
-  #     allow(transaction).to receive(:new).with(0, 0, 500).and_return(transaction_instance)
-  #     subject.remove_funds(500)
-  #     expect(subject.transaction_history[1]).to eq(transaction_instance)
-  #   end
-  # end
 end
