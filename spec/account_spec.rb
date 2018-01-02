@@ -40,6 +40,9 @@ describe Account do
     it 'should throw an error if there are insufficient funds' do
       expect { subject.remove_funds(700) }.to raise_error("You have insufficient funds")
     end
+    it 'should throw an error if there entered value is negative' do
+      expect { subject.remove_funds(-700) }.to raise_error("You can't withdraw a negative")
+    end
   end
 
   describe '#print_statement' do

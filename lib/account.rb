@@ -20,6 +20,7 @@ class Account
 
   def remove_funds(debit_amount)
     fail "You have insufficient funds" if (@balance - debit_amount) < 0
+    fail "You can't withdraw a negative" if debit_amount < 0
     @balance -= debit_amount
     debit_account_and_create_transaction(debit_amount)
   end
