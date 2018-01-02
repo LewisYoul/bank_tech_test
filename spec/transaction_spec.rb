@@ -14,4 +14,10 @@ describe Transaction do
       expect(acc_credit.credit).to eq(500)
     end
   end
+  describe '#date' do
+    it 'should return the date in the expected format' do
+      acc_credit = Transaction.new(1000, 500, 0, "2018-01-02")
+      expect(acc_credit.date).to eq("02/01/2018")
+    end
+  end
 end
