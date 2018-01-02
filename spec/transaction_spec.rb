@@ -2,6 +2,12 @@ require 'transaction'
 
 describe Transaction do
 
+  describe '#balance' do
+    it 'should return the account balance at the time the transaction was made' do
+      acc_debit = Transaction.new(1000, 0, 500, "2019-02-03")
+      expect(acc_debit.balance).to eq(1000)
+    end
+  end
   describe '#debit' do
     it 'should have a debit value of 500' do
       acc_debit = Transaction.new(1000, 0, 500, "2018-01-02")
