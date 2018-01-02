@@ -8,6 +8,7 @@ class Account
   end
 
   def add_funds(credit_amount)
+    fail "You can't credit a negative value" if credit_amount <= 0
     @balance += credit_amount
     @transaction_history << @transaction_class.new(@balance, credit_amount, 0)
   end

@@ -25,6 +25,9 @@ describe Account do
       subject.add_funds(500)
       expect(subject.balance).to eq(500)
     end
+    it 'throws an error if a negative credit value is given' do
+      expect { subject.add_funds(-300) }.to raise_error("You can't credit a negative value")
+    end
   end
 
   describe '#remove_funds' do
