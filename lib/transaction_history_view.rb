@@ -8,7 +8,7 @@ class TransactionHistoryView
     @transaction_history_instance = transaction_history_instance
   end
 
-  def print_statement
+  def return_statement
     print "date || credit || debit || balance\n" + create_statements
   end
 

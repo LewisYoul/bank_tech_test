@@ -8,6 +8,10 @@ class Account
     @transaction_history_view = transaction_history_view
   end
 
+  def print_statement
+    @transaction_history_view.return_statement
+  end
+
   def add_funds(credit_amount)
     fail "You can't credit a negative value" if credit_amount <= 0
     @balance += credit_amount

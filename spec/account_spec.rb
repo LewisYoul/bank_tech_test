@@ -3,7 +3,7 @@ require 'account'
 describe Account do
   let(:transaction) { double(:transaction) }
   let(:transaction_history_instance) { double(:transaction_history_instance) }
-  let(:transaction_view_instance) { double(:transaction_view_instance, transaction_history_instance: transaction_history_instance) }
+  let(:transaction_view_instance) { double(:transaction_view_instance, transaction_history_instance: transaction_history_instance, return_statement: "Test Print") }
   subject { Account.new(transaction_view_instance) }
 
   describe '#balance' do
@@ -42,6 +42,11 @@ describe Account do
     end
   end
 
+  describe '#print_statement' do
+    it 'prints the transaction history to stdout' do
+      expect(subject.print_statement).to eq("Test Print")
+    end
+  end
   # describe '#transaction_history' do
   #   it 'should be an instance of Array' do
   #     expect(subject.transaction_history).to be_an_instance_of(Array)

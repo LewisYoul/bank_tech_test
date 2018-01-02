@@ -11,9 +11,9 @@ describe TransactionHistoryView do
     end
   end
 
-  describe '#print_statement' do
+  describe '#return_statement' do
     it 'prints out the statement' do
-      expect{ subject.print_statement }.to output(
+      expect{ subject.return_statement }.to output(
         "date || credit || debit || balance\n2018-01-01 || 1000 || 0 || 1000")
         .to_stdout
     end
