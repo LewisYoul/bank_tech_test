@@ -15,7 +15,7 @@ class TransactionHistoryView
   private
 
   def create_statements
-    print_array = @transaction_history_instance.all_transactions.map do |transaction|
+    print_array = @transaction_history_instance.all_transactions.reverse.map do |transaction|
       "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.balance}"
     end
     print_array.join("\n")
