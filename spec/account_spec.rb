@@ -27,6 +27,9 @@ describe Account do
     it 'throws an error if a negative credit value is given' do
       expect { subject.add_funds(-300) }.to raise_error("You can't credit a negative value")
     end
+    it 'throws an error if the value is not an integer' do
+      expect { subject.add_funds(300.45) }.to raise_error("Please enter an Integer")
+    end
   end
 
   describe '#remove_funds' do
@@ -42,6 +45,9 @@ describe Account do
     end
     it 'should throw an error if there entered value is negative' do
       expect { subject.remove_funds(-700) }.to raise_error("You can't withdraw a negative")
+    end
+    it 'throws an error if the value is not an integer' do
+      expect { subject.remove_funds(300.45) }.to raise_error("Please enter an Integer")
     end
   end
 

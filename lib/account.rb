@@ -13,7 +13,7 @@ class Account
   end
 
   def add_funds(credit_amount)
-    fail "You can't credit a negative value" if credit_amount <= 0
+    credit_checks(credit_amount)
     @balance += credit_amount
     credit_account_and_create_transaction(credit_amount)
   end
@@ -27,8 +27,14 @@ class Account
   private
 
   def debit_checks(debit_amount)
+    fail "Please enter an Integer" if !debit_amount.is_a?(Integer)
     fail "You have insufficient funds" if (@balance - debit_amount) < 0
     fail "You can't withdraw a negative" if debit_amount < 0
+  end
+
+  def credit_checks(credit_amount)
+    fail "Please enter an Integer" if !credit_amount.is_a?(Integer)
+    fail "You can't credit a negative value" if credit_amount <= 0
   end
 
   def credit_account_and_create_transaction(credit_amount)

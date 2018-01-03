@@ -9,11 +9,11 @@ class TransactionHistory
     @all_transactions = []
   end
 
-  def add_funds(credit_amount, balance = 500)
+  def add_funds(credit_amount, balance)
     @all_transactions << @transaction_class.new(balance, credit_amount, 0)
   end
 
-  def remove_funds(debit_amount, balance = 500)
+  def remove_funds(debit_amount, balance)
     @all_transactions << @transaction_class.new(balance, 0, debit_amount)
   end
 

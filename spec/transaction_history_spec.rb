@@ -21,7 +21,7 @@ describe TransactionHistory do
   describe '#add_funds' do
     it 'adds the transaction to the transaction history' do
       allow(transaction_class).to receive(:new).with(500, 500, 0).and_return(credit_transaction_instance)
-      subject.add_funds(500)
+      subject.add_funds(500, 500)
       expect(subject.all_transactions[0]).to eq(credit_transaction_instance)
     end
   end
