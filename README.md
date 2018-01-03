@@ -137,3 +137,7 @@ date || credit || debit || balance
 2018-01-02 || 1000 || 0 || 1000
 2018-01-02 || 0 || 300 || 700 => nil
 ```
+
+## <a name="technologies">Technologies</a>
+
+This program has been written using Ruby version 2.4.1. It's development was entirely test driven using the RSpec testing framework. Uniform code formatting has been achieved using Rubocop.

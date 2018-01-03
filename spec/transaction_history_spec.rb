@@ -20,7 +20,9 @@ describe TransactionHistory do
 
   describe '#add_funds' do
     it 'adds the transaction to the transaction history' do
-      allow(transaction_class).to receive(:new).with(500, 500, 0).and_return(credit_transaction_instance)
+      allow(transaction_class).to receive(:new)
+        .with(500, 500, 0)
+        .and_return(credit_transaction_instance)
       subject.add_funds(500, 500)
       expect(subject.all_transactions[0]).to eq(credit_transaction_instance)
     end
@@ -28,10 +30,11 @@ describe TransactionHistory do
 
   describe '#remove_funds' do
     it 'adds the transaction to the transaction history' do
-      allow(transaction_class).to receive(:new).with(0, 0, 500).and_return(debit_transaction_instance)
+      allow(transaction_class).to receive(:new)
+        .with(0, 0, 500)
+        .and_return(debit_transaction_instance)
       subject.remove_funds(500, 0)
       expect(subject.all_transactions[0]).to eq(debit_transaction_instance)
     end
   end
-
 end

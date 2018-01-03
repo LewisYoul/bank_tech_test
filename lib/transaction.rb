@@ -1,5 +1,6 @@
 require 'date'
 
+# Responsible for the balance, credit, debit and date of a transaction
 class Transaction
   attr_accessor :balance, :credit, :debit, :date
 
@@ -13,8 +14,7 @@ class Transaction
   private
 
   def format_date(date)
-    arr = date.split("-")
-    (arr[0], arr[1], arr[2] = arr[2], arr[1], arr[0]).join("/")
+    arr = date.split('-')
+    (arr[0], arr[1], arr[2] = arr[2], arr[1], arr[0]).join('/')
   end
-
 end

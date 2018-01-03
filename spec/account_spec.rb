@@ -3,7 +3,13 @@ require 'account'
 describe Account do
   let(:transaction) { double(:transaction) }
   let(:transaction_history_instance) { double(:transaction_history_instance) }
-  let(:transaction_view_instance) { double(:transaction_view_instance, transaction_history_instance: transaction_history_instance, return_statement: "Test Print") }
+  let(:transaction_view_instance) do
+    double(
+      :transaction_view_instance,
+      transaction_history_instance: transaction_history_instance,
+      return_statement: 'Test Print'
+    )
+  end
   subject { Account.new(transaction_view_instance) }
 
   describe '#balance' do
@@ -25,10 +31,12 @@ describe Account do
       expect(subject.balance).to eq(500)
     end
     it 'throws an error if a negative credit value is given' do
-      expect { subject.add_funds(-300) }.to raise_error("You can't credit a negative value")
+      expect { subject.add_funds(-300) }
+        .to raise_error("You can't credit a negative value")
     end
     it 'throws an error if the value is not an integer' do
-      expect { subject.add_funds(300.45) }.to raise_error("Please enter an Integer")
+      expect { subject.add_funds(300.45) }
+        .to raise_error('Please enter an Integer')
     end
   end
 
@@ -41,19 +49,22 @@ describe Account do
       expect(subject.balance).to eq(0)
     end
     it 'should throw an error if there are insufficient funds' do
-      expect { subject.remove_funds(700) }.to raise_error("You have insufficient funds")
+      expect { subject.remove_funds(700) }
+        .to raise_error('You have insufficient funds')
     end
     it 'should throw an error if there entered value is negative' do
-      expect { subject.remove_funds(-700) }.to raise_error("You can't withdraw a negative")
+      expect { subject.remove_funds(-700) }
+        .to raise_error("You can't withdraw a negative")
     end
     it 'throws an error if the value is not an integer' do
-      expect { subject.remove_funds(300.45) }.to raise_error("Please enter an Integer")
+      expect { subject.remove_funds(300.45) }
+        .to raise_error('Please enter an Integer')
     end
   end
 
   describe '#print_statement' do
     it 'prints the transaction history to stdout' do
-      expect(subject.print_statement).to eq("Test Print")
+      expect(subject.print_statement).to eq('Test Print')
     end
   end
 end

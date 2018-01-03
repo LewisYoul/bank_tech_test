@@ -1,11 +1,15 @@
 require_relative './transaction_history_view'
 
+# Account is responsible for the account balance
 class Account
   attr_accessor :balance, :transaction_history_view
 
   MINIMUM = 0
 
-  def initialize(transaction_history_view = TransactionHistoryView.new, balance = 0)
+  def initialize(
+    transaction_history_view = TransactionHistoryView.new,
+    balance = 0
+  )
     @balance = balance
     @transaction_history_view = transaction_history_view
   end
@@ -29,22 +33,25 @@ class Account
   private
 
   def debit_checks(debit_amount)
-    fail "Please enter an Integer" if !debit_amount.is_a?(Integer)
-    fail "You have insufficient funds" if (@balance - debit_amount) < MINIMUM
-    fail "You can't withdraw a negative" if debit_amount < MINIMUM
+    raise 'Please enter an Integer' unless debit_amount.is_a?(Integer)
+    raise 'You have insufficient funds' if (@balance - debit_amount) < MINIMUM
+    raise "You can't withdraw a negative" if debit_amount < MINIMUM
   end
 
   def credit_checks(credit_amount)
-    fail "Please enter an Integer" if !credit_amount.is_a?(Integer)
-    fail "You can't credit a negative value" if credit_amount <= MINIMUM
+    raise 'Please enter an Integer' unless credit_amount.is_a?(Integer)
+    raise "You can't credit a negative value" if credit_amount <= MINIMUM
   end
 
   def credit_account_and_create_transaction(credit_amount)
-    @transaction_history_view.transaction_history_instance.add_funds(credit_amount, @balance)
+    @transaction_history_view
+      .transaction_history_instance
+      .add_funds(credit_amount, @balance)
   end
 
   def debit_account_and_create_transaction(debit_amount)
-    @transaction_history_view.transaction_history_instance.remove_funds(debit_amount, @balance)
+    @transaction_history_view
+      .transaction_history_instance
+      .remove_funds(debit_amount, @balance)
   end
-
 end
