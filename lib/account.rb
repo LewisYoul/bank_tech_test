@@ -13,6 +13,7 @@ class Account
   end
 
   def add_funds(credit_amount)
+    fail "Please specify amount to 2 decimal places" if (('%.2f' % credit_amount) != credit_amount)
     fail "You can't credit a negative value" if credit_amount <= 0
     @balance += credit_amount
     credit_account_and_create_transaction(credit_amount)

@@ -27,6 +27,9 @@ describe Account do
     it 'throws an error if a negative credit value is given' do
       expect { subject.add_funds(-300) }.to raise_error("You can't credit a negative value")
     end
+    it 'throws an error if the value entered is not specified to 2 decimal places' do
+      expect { subject.add_funds(400) }.to raise_error("Please specify amount to 2 decimal places")
+    end
   end
 
   describe '#remove_funds' do
