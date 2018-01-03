@@ -60,6 +60,15 @@ This piece of work allows you to succesfully create an account, credit and debit
 * Debit with a negative value
 * Withdraw an amount that exceeds the balance
 
+## <a name="struggles">Struggles</a>
+
+While I believe I have fulfilled the acceptance criteria of this test there are some implementations that I would still like to implement should time allow.
+
+My first and main concern is that I have limited the user to only be able to enter integers. The reason for this is because I am aware of the issues associated with using floats as a form of currency storage. The clear drawback of my solution however is that the user cannot credit or debit with a decimal value which is entirely unrealistic.
+
+I strongly considered creating a Bank class that would recieve have a dependency of the class Account. The reason I decided against this is because I felt that it was a layer of extraction too great; I felt that I would simply be repeating the contents of the Account class within that of the Bank class, therefore preventing my code from being DRY. Therefore at the moment one can only create one account at a time. I believe this fulfills the requirements of this test but should multiple accounts need to be opened then a Bank class would be the solution I would use.
+
+One dilemma I regularly face is the length of method and variable names. In this peice of work I have chosen to keep my naming as descriptive as possible in order to make the code legible. I appreciate that this does, on occasion sacrifice brevity.
 
 ## <a name="setup">Setup and Demo</a>
 
