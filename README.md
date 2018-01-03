@@ -138,6 +138,12 @@ date || credit || debit || balance
 2018-01-02 || 0 || 300 || 700 => nil
 ```
 
+<div width="600px">
+	<a>
+		<img src="./public/images/Bank_image.png" width="800px" height="520px" />
+	</a>
+</div>
+
 ## <a name="technologies">Technologies</a>
 
 This program has been written using Ruby version 2.4.1. It's development was entirely test driven using the RSpec testing framework. Uniform code formatting has been achieved using Rubocop.
