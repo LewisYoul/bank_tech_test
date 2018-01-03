@@ -52,6 +52,15 @@ Generating these user stories allows me to break down the task into smaller prob
 
 ## <a name="execution">Execution</a>
 
+I have endeavoured to adhere to the Single Responsility Principal at all times, extracting code into new/private methods when the responsibility of a function increases. I also believe I have conformed to the Don't Repeat Yourself principal, removing duplicate/similar lines of code where possible and refactoring into single functions.
+
+This piece of work allows you to succesfully create an account, credit and debit it as well as print your statement. To my knowledge all edge-cases have been accounted for. The user us unable to:
+
+* Credit with a negative value
+* Debit with a negative value
+* Withdraw an amount that exceeds the balance
+
+
 ## <a name="setup">Setup and Demo</a>
 
 ### Setup
