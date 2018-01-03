@@ -69,6 +69,8 @@
         1,
         null,
         1,
+        null,
+        1,
         10,
         10,
         null,
@@ -140,6 +142,7 @@
       "/home/lewis/Repositories/Makers_Academy/10_Week/bank_tech_test/lib/transaction_history.rb": [
         1,
         null,
+        1,
         1,
         null,
         1,
@@ -276,6 +279,6 @@
         null
       ]
     },
-    "timestamp": 1514979300
+    "timestamp": 1514979613
   }
 }
