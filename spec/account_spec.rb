@@ -27,7 +27,7 @@ describe Account do
 
   describe '#add_funds' do
     it 'adds 500 to the account balance' do
-      allow(transaction_history_instance).to receive(:add_funds).with(500, balance)
+      allow(transaction_history_instance).to receive(:add_funds).with(500, balance.amount)
       expect(subject.balance).to receive(:credit_balance).with(500)
       subject.add_funds(500)
     end
@@ -43,8 +43,8 @@ describe Account do
 
   describe '#remove_funds' do
     it 'removes 500 from the account balance' do
-      allow(transaction_history_instance).to receive(:add_funds).with(500, balance)
-      allow(transaction_history_instance).to receive(:remove_funds).with(500, balance)
+      allow(transaction_history_instance).to receive(:add_funds).with(500, balance.amount)
+      allow(transaction_history_instance).to receive(:remove_funds).with(500, balance.amount)
       subject.add_funds(500)
       expect(subject.balance).to receive(:debit_balance).with(500)
       subject.remove_funds(500)
