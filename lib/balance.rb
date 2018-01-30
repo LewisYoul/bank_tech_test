@@ -11,4 +11,8 @@ class Balance
   def credit_balance(amount)
     @amount += amount
   end
+
+  def debit_balance(amount)
+    @amount -= amount
+  end
 end

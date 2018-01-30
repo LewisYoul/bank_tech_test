@@ -16,4 +16,12 @@ describe Balance do
       expect(subject.amount).to eq(300)
     end
   end
+
+  describe "#debit_balance" do
+    it "decreases the balance amount" do
+      subject.credit_balance(300)
+      subject.debit_balance(300)
+      expect(subject.amount).to eq(0)
+    end
+  end
 end
