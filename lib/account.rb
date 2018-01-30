@@ -6,8 +6,6 @@ require_relative './error'
 class Account
   attr_accessor :balance, :transaction_history_view, :error
 
-  MINIMUM = 0
-
   def initialize(
     transaction_history_view = TransactionHistoryView.new,
     balance = Balance.new
