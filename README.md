@@ -70,6 +70,8 @@ I strongly considered creating a Bank class that would recieve have a dependency
 
 One dilemma I regularly face is the length of method and variable names. In this piece of work I have chosen to keep my naming as descriptive as possible in order to make the code legible. I appreciate that this does, on occasion sacrifice brevity.
 
+Another change I would like to make in the future is to modify the transaction class to only have one method that will credit or debit depending on the information provided to it.
+
 ## <a name="setup">Setup and Demo</a>
 
 ### Setup
