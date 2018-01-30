@@ -15,4 +15,10 @@ describe Error do
       expect { subject.debit_checks(200, -400) }.to raise_error("You can't withdraw a negative")
     end
   end
+
+  describe "#credit_checks" do
+    it "throws an error if the amount is not an integer" do
+      expect { subject.credit_checks(200, "string") }.to raise_error('Please enter an Integer')
+    end
+  end
 end
