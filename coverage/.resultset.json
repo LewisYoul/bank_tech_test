@@ -202,6 +202,31 @@
         null,
         null
       ],
+      "/home/lewis/Repositories/Makers_Academy/10_Week/bank_tech_test/spec/balance_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        2,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/lewis/Repositories/Makers_Academy/10_Week/bank_tech_test/lib/balance.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
       "/home/lewis/Repositories/Makers_Academy/10_Week/bank_tech_test/spec/transaction_history_spec.rb": [
         1,
         null,
@@ -326,6 +351,6 @@
         null
       ]
     },
-    "timestamp": 1514985014
+    "timestamp": 1517307023
   }
 }
