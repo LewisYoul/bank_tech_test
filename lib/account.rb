@@ -1,4 +1,5 @@
 require_relative './transaction_history_view'
+require_relative './balance'
 
 # Account is responsible for the account balance
 class Account
@@ -8,7 +9,7 @@ class Account
 
   def initialize(
     transaction_history_view = TransactionHistoryView.new,
-    balance = 0
+    balance = Balance.new
   )
     @balance = balance
     @transaction_history_view = transaction_history_view
@@ -18,15 +19,15 @@ class Account
     @transaction_history_view.return_statement
   end
 
-  def add_funds(credit_amount)
-    credit_checks(credit_amount)
-    @balance += credit_amount
-    credit_account_and_create_transaction(credit_amount)
+  def add_funds(amount)
+    credit_checks(amount)
+    @balance.credit_balance(amount)
+    credit_account_and_create_transaction(amount)
   end
 
   def remove_funds(debit_amount)
     debit_checks(debit_amount)
-    @balance -= debit_amount
+    @balance.debit_balance(debit_amount)
     debit_account_and_create_transaction(debit_amount)
   end
 
@@ -34,7 +35,7 @@ class Account
 
   def debit_checks(debit_amount)
     raise 'Please enter an Integer' unless debit_amount.is_a?(Integer)
-    raise 'You have insufficient funds' if (@balance - debit_amount) < MINIMUM
+    raise 'You have insufficient funds' if (@balance.amount - debit_amount) < MINIMUM
     raise "You can't withdraw a negative" if debit_amount < MINIMUM
   end
 

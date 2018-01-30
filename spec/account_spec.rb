@@ -10,11 +10,12 @@ describe Account do
       return_statement: 'Test Print'
     )
   end
-  subject { Account.new(transaction_view_instance) }
+  let (:balance) { double(:balance, amount: 1000, credit_balance: "credit", debit_balance: "debit") }
+  subject { Account.new(transaction_view_instance, balance) }
 
   describe '#balance' do
-    it 'returns an initial balance of zero' do
-      expect(subject.balance).to eq(0)
+    it 'returns a balance object' do
+      expect(subject.balance).to eq(balance)
     end
   end
 
@@ -26,9 +27,9 @@ describe Account do
 
   describe '#add_funds' do
     it 'adds 500 to the account balance' do
-      allow(transaction_history_instance).to receive(:add_funds).with(500, 500)
+      allow(transaction_history_instance).to receive(:add_funds).with(500, balance)
+      expect(subject.balance).to receive(:credit_balance).with(500)
       subject.add_funds(500)
-      expect(subject.balance).to eq(500)
     end
     it 'throws an error if a negative credit value is given' do
       expect { subject.add_funds(-300) }
@@ -42,13 +43,14 @@ describe Account do
 
   describe '#remove_funds' do
     it 'removes 500 from the account balance' do
-      allow(transaction_history_instance).to receive(:add_funds).with(500, 500)
-      allow(transaction_history_instance).to receive(:remove_funds).with(500, 0)
+      allow(transaction_history_instance).to receive(:add_funds).with(500, balance)
+      allow(transaction_history_instance).to receive(:remove_funds).with(500, balance)
       subject.add_funds(500)
+      expect(subject.balance).to receive(:debit_balance).with(500)
       subject.remove_funds(500)
-      expect(subject.balance).to eq(0)
     end
     it 'should throw an error if there are insufficient funds' do
+      allow(balance).to receive(:amount).and_return(0)
       expect { subject.remove_funds(700) }
         .to raise_error('You have insufficient funds')
     end
