@@ -3,9 +3,17 @@ require 'balance'
 describe Balance do
 
   subject { Balance.new }
-  describe "#value" do
-    it "should be instantiated with a value of 0" do
-      expect(subject.value).to eq(0)
+
+  describe "#amount" do
+    it "should be instantiated with a amount of 0" do
+      expect(subject.amount).to eq(0)
+    end
+  end
+
+  describe "#credit_balance" do
+    it "increases the balance amount" do
+      subject.credit_balance(300)
+      expect(subject.amount).to eq(300)
     end
   end
 end

@@ -1,10 +1,14 @@
 class Balance
 
-  attr_accessor :value
+  attr_accessor :amount
 
-  INITIAL_VALUE = 0
+  INITIAL_AMOUNT = 0
 
   def initialize
-    @value = INITIAL_VALUE
+    @amount = INITIAL_AMOUNT
+  end
+
+  def credit_balance(amount)
+    @amount += amount
   end
 end
