@@ -8,5 +8,6 @@ class Error
 
   def credit_checks(balance_amount, amount)
     raise 'Please enter an Integer' unless amount.is_a?(Integer)
+    raise "You can't credit a negative value" if amount <= 0
   end
 end

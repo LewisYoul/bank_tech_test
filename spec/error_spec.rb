@@ -20,5 +20,8 @@ describe Error do
     it "throws an error if the amount is not an integer" do
       expect { subject.credit_checks(200, "string") }.to raise_error('Please enter an Integer')
     end
+    it "throws an error if the amount given is negative" do
+      expect { subject.credit_checks(200, -400) }.to raise_error("You can't credit a negative value")
+    end
   end
 end
