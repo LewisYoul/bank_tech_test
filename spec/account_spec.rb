@@ -10,9 +10,8 @@ describe Account do
       return_statement: 'Test Print'
     )
   end
-  let (:error) { double(:error) }
   let (:balance) { double(:balance, amount: 1000, credit_balance: "credit", debit_balance: "debit") }
-  subject { Account.new(transaction_view_instance, balance, error) }
+  subject { Account.new(transaction_view_instance, balance) }
 
   describe '#balance' do
     it 'returns a balance object' do
@@ -50,9 +49,4 @@ describe Account do
     end
   end
 
-  describe "#error" do
-    it "is an instance of the error class" do
-      expect(subject.error).to eq(error)
-    end
-  end
 end
