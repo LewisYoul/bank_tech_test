@@ -10,8 +10,9 @@ describe Account do
       return_statement: 'Test Print'
     )
   end
+  let (:error) { double(:error) }
   let (:balance) { double(:balance, amount: 1000, credit_balance: "credit", debit_balance: "debit") }
-  subject { Account.new(transaction_view_instance, balance) }
+  subject { Account.new(transaction_view_instance, balance, error) }
 
   describe '#balance' do
     it 'returns a balance object' do
@@ -31,14 +32,6 @@ describe Account do
       expect(subject.balance).to receive(:credit_balance).with(500)
       subject.add_funds(500)
     end
-    it 'throws an error if a negative credit value is given' do
-      expect { subject.add_funds(-300) }
-        .to raise_error("You can't credit a negative value")
-    end
-    it 'throws an error if the value is not an integer' do
-      expect { subject.add_funds(300.45) }
-        .to raise_error('Please enter an Integer')
-    end
   end
 
   describe '#remove_funds' do
@@ -49,24 +42,17 @@ describe Account do
       expect(subject.balance).to receive(:debit_balance).with(500)
       subject.remove_funds(500)
     end
-    it 'should throw an error if there are insufficient funds' do
-      allow(balance).to receive(:amount).and_return(0)
-      expect { subject.remove_funds(700) }
-        .to raise_error('You have insufficient funds')
-    end
-    it 'should throw an error if there entered value is negative' do
-      expect { subject.remove_funds(-700) }
-        .to raise_error("You can't withdraw a negative")
-    end
-    it 'throws an error if the value is not an integer' do
-      expect { subject.remove_funds(300.45) }
-        .to raise_error('Please enter an Integer')
-    end
   end
 
   describe '#print_statement' do
     it 'prints the transaction history to stdout' do
       expect(subject.print_statement).to eq('Test Print')
+    end
+  end
+
+  describe "#error" do
+    it "is an instance of the error class" do
+      expect(subject.error).to eq(error)
     end
   end
 end
