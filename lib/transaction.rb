@@ -1,6 +1,5 @@
 require 'date'
 
-# Responsible for the balance, credit, debit and date of a transaction
 class Transaction
   attr_accessor :balance, :credit, :debit, :date
 

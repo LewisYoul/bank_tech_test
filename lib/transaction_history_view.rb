@@ -1,6 +1,5 @@
 require_relative 'transaction_history'
 
-# Responsible for visualising the account statement
 class TransactionHistoryView
   attr_accessor :transaction_history_instance
 

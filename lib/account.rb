@@ -1,15 +1,11 @@
 require_relative './transaction_history_view'
 require_relative './balance'
-require_relative './error'
 
-# Account is responsible for the account balance
 class Account
-  attr_accessor :balance, :transaction_history_view, :error
+  attr_accessor :balance, :transaction_history_view
 
-  def initialize(
-    transaction_history_view = TransactionHistoryView.new,
-    balance = Balance.new
-  )
+  def initialize(transaction_history_view = TransactionHistoryView.new,
+                                  balance = Balance.new)
     @balance = balance
     @transaction_history_view = transaction_history_view
   end

@@ -1,6 +1,5 @@
 require_relative './transaction.rb'
 
-# Responsible for maintaining the transaction history
 class TransactionHistory
   attr_accessor :all_transactions, :transaction_class
 
