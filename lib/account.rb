@@ -1,5 +1,5 @@
-require_relative './transaction_history_view'
 require_relative './balance'
+require_relative './transaction_history_view'
 
 class Account
   attr_accessor :balance, :transaction_history_view
