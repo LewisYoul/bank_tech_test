@@ -27,14 +27,12 @@ class Account
   private
 
   def credit_account_and_create_transaction(credit_amount)
-    @transaction_history_view
-      .transaction_history_instance
+    @transaction_history_view.transaction_history_instance
       .add_funds(credit_amount, @balance.amount)
   end
 
   def debit_account_and_create_transaction(debit_amount)
-    @transaction_history_view
-      .transaction_history_instance
+    @transaction_history_view.transaction_history_instance
       .remove_funds(debit_amount, @balance.amount)
   end
 end
