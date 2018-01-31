@@ -97,7 +97,6 @@
       ],
       "/home/lewis/Repositories/Makers_Academy/10_Week/bank_tech_test/lib/balance.rb": [
         1,
-        null,
         1,
         null,
         1,
@@ -263,6 +262,8 @@
         1,
         null,
         1,
+        null,
+        1,
         3,
         2,
         1,
@@ -398,6 +399,6 @@
         null
       ]
     },
-    "timestamp": 1517391966
+    "timestamp": 1517392092
   }
 }
