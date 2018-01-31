@@ -86,10 +86,12 @@
         null,
         1,
         null,
+        null,
         2,
         null,
         null,
         1,
+        null,
         null,
         1,
         null,
@@ -260,7 +262,6 @@
       ],
       "/home/lewis/Repositories/Makers_Academy/10_Week/bank_tech_test/lib/error.rb": [
         1,
-        null,
         1,
         null,
         1,
@@ -399,6 +400,6 @@
         null
       ]
     },
-    "timestamp": 1517392092
+    "timestamp": 1517392245
   }
 }
